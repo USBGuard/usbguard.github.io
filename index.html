@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>USBGuard by dkopecek</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/dkopecek/usbguard">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/dkopecek/usbguard/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/dkopecek/usbguard/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>USBGuard</h1>
+          <p>The usbguard software framework helps to protect your computer against rogue USB devices by implementing basic whitelisting/blacklisting capabilities based on USB device attributes.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/dkopecek">dkopecek</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="usbguard" class="anchor" href="#usbguard" aria-hidden="true"><span class="octicon octicon-link"></span></a>USBGuard</h1>
+
+<p>The USBGuard software framework helps to protect your computer against rogue USB devices by implementing basic
+whitelisting/blacklisting capabilities based on USB device attributes.</p>
+
+<p><strong>WARNING</strong>: The 0.x releases are not production ready packages. They serve for tech-preview and user feedback purposes
+only. Please share your feedback or request a feature in the Github issue trackers for each project:</p>
+
+<p>Report a bug or request a feature in <a href="https://github.com/dkopecek/usbguard/issues/new">usbguard</a>
+Report a bug or request a feature in <a href="https://github.com/dkopecek/usbguard-applet-qt/issues/new">usbguard-applet-qt</a></p>
+
+<h2>
+<a id="supported-operating-systems" class="anchor" href="#supported-operating-systems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Operating Systems</h2>
+
+<p>Currently, USBGuard works only on Linux. To enforce the user-defined policy, it uses the USB device authorization feature
+implemented in the Linux kernel since the year 2007. Read <a href="https://www.kernel.org/doc/Documentation/usb/authorization.txt">this document</a>
+if you want to know more.</p>
+
+<h2>
+<a id="compilation" class="anchor" href="#compilation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compilation</h2>
+
+<p>If you want to compile the sources from a release tarball, you'll have to install development files for:</p>
+
+<ul>
+<li>
+<a href="https://github.com/ClusterLabs/libqb">libqb</a> - used for IPC</li>
+<li>
+<a href="http://libsodium.org">libsodium</a> - used for hashing</li>
+<li>systemd-devel - used for udev</li>
+</ul>
+
+<p>And then do:</p>
+
+<pre><code>$ ./configure
+$ make
+$ sudo make install
+</code></pre>
+
+<p>If you want to compile the sources in a cloned repository, there's one additional step required:</p>
+
+<pre><code>$ git submodule init
+</code></pre>
+
+<p>This will fetch the sources of <a href="https://github.com/cppformat/cppformat">cppformat</a>, <a href="https://github.com/nlohmann/json/">json</a>
+and <a href="https://github.com/gabime/spdlog">spdlog</a> which are used in this project too.</p>
+
+<h2>
+<a id="pre-compiled-packages" class="anchor" href="#pre-compiled-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pre-compiled packages</h2>
+
+<h3>
+<a id="fedora-linux" class="anchor" href="#fedora-linux" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fedora Linux</h3>
+
+<p>Pre-compiled packages for Fedora 20, 21, 22 and rawhide are distributes using a Copr <a href="https://copr.fedoraproject.org/coprs/mildew/usbguard/">repository</a>.
+You can install the repository by executing the following steps:</p>
+
+<pre><code>$ sudo yum install yum-plugin-copr
+$ sudo yum copr enable mildew/usbguard
+$ sudo yum install usbguard
+</code></pre>
+
+<p>To actually start the daemon, use:</p>
+
+<pre><code>$ sudo systemctl start usbguard.service
+</code></pre>
+
+<h2>
+<a id="rules" class="anchor" href="#rules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rules</h2>
+
+<p>The usbguard daemon decides which USB device to authorize based on a policy defined by a set of rules. When an USB device is inserted into
+the system, the daemon scans the existing rules sequentially and when a matching rule is found, it either authorizes (allows), deauthorizes
+(blocks) or removes (rejects) the device, based on the rule target. If no matching rule is found, the decision is based on an implicit default
+target. This implicit default is to block the device until a decision is made by the user.</p>
+
+<p>The rule language grammar, expressed in a BNF-like syntax, is the following:</p>
+
+<pre><code>rule ::= target device.
+
+target ::= "allow" | "block" | "reject".
+
+device ::= device_id device_attributes.
+device ::= .
+
+device_id ::= "*:*" | vendor_id ":*" | vendor_id ":" product_id.
+
+device_attributes ::= device_attributes | attribute.
+device_attributes ::= .
+
+attribute ::= name string.
+</code></pre>
+
+<h3>
+<a id="targets" class="anchor" href="#targets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Targets</h3>
+
+<p>The target of a rule specifies whether the device will be authorized for use or not. Three types of target are recognized:</p>
+
+<ul>
+<li>
+<code>allow</code> - authorize the device</li>
+<li>
+<code>block</code> - deauthorize the device</li>
+<li>
+<code>reject</code> - remove the device from the system</li>
+</ul>
+
+<h3>
+<a id="device-specification" class="anchor" href="#device-specification" aria-hidden="true"><span class="octicon octicon-link"></span></a>Device specification</h3>
+
+<p>Except the target, all the other fields of a rule need not be specified. Such a minimal rule will match any device and
+allows the policy creator to write an explicit default target (there's an implicit one too, more on that later).
+However, if one want's to narrow the applicability of a rule to a set of devices or one device only, it's possible to
+do so with a device id and/or device attributes.</p>
+
+<h4>
+<a id="device-id" class="anchor" href="#device-id" aria-hidden="true"><span class="octicon octicon-link"></span></a>Device ID</h4>
+
+<p>A USB device ID, as understood by usbguard, is the colon delimited pair <em>vendor_id:product_id</em>. All USB devices have this
+ID assigned by the manufacturer and it should uniquely identify a USB product. Both <em>vendor_id</em> and <em>product_id</em> are 16-bit
+numbers represented in hexadecimal base.</p>
+
+<p>In the rule, it's possible to use an asterisk character to match either any device ID <code>*:*</code> or any product ID from a
+specific vendor, e.g. <code>1234:*</code>.</p>
+
+<h4>
+<a id="device-attributes" class="anchor" href="#device-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Device attributes</h4>
+
+<p>Device attributes are specific value read from the USB device after it's inserted to the system. Which attributes are
+available is defined bellow. Some of the attributes are derived or based on attributes read directly from the device.
+The value of an attribute is represented as a double-quoted string.</p>
+
+<p>List of attributes:</p>
+
+<ul>
+<li><code>class "NN"</code></li>
+<li><code>hash "[0-9a-f]{32}"</code></li>
+<li><code>name "..."</code></li>
+<li><code>port "[0-9]{1,2}-[0-9]{1,2}"</code></li>
+<li><code>port { "[0-9]{1,2}-[0-9]{1,2}" "[0-9]{1,2}-[0-9]{1,2}" ... }</code></li>
+</ul>
+
+<h3>
+<a id="initial-policy" class="anchor" href="#initial-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initial policy</h3>
+
+<p>There's currently no tool to generate an initial rule set for devices that the user wants to allow by default.
+However, using the following bash oneliner, you can generate a simple allow policy for USB devices connected
+to the system at the moment of generating the policy:</p>
+
+<pre><code># lsusb | sed -n 's|.*\([0-9a-f]\{4\}:[0-9a-f]\{4\}\) \(.*\)|allow \1|p' &gt; /etc/usbguard/rules.conf
+</code></pre>
+
+<p>Future releases will include a tool to generate more complex initial policies.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
