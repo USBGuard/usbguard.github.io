@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[USBGuard]]></title>
-  <link href="/atom.xml" rel="self"/>
-  <link href="/"/>
-  <updated>2015-04-01T14:55:06+02:00</updated>
-  <id>/</id>
+  <link href="https://dkopecek.github.io/usbguard//atom.xml" rel="self"/>
+  <link href="https://dkopecek.github.io/usbguard//"/>
+  <updated>2015-04-01T14:58:08+02:00</updated>
+  <id>https://dkopecek.github.io/usbguard//</id>
   <author>
     <name><![CDATA[]]></name>
     <email><![CDATA[dkopecek@redhat.com]]></email>

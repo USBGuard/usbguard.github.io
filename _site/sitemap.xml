@@ -4,9 +4,9 @@
   
     
     <url>
-      <loc>/404.html</loc>
+      <loc>https://dkopecek.github.io/usbguard//404.html</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -21,24 +21,9 @@
   
     
     <url>
-      <loc>/blog/</loc>
+      <loc>https://dkopecek.github.io/usbguard//blog/</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/documentation/compilation.html</loc>
-      
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -51,24 +36,9 @@
   
     
     <url>
-      <loc>/documentation/configuration.html</loc>
+      <loc>https://dkopecek.github.io/usbguard//documentation/compilation.html</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/documentation/cpp-api.html</loc>
-      
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -81,24 +51,9 @@
   
     
     <url>
-      <loc>/blog/</loc>
+      <loc>https://dkopecek.github.io/usbguard//documentation/configuration.html</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/development.html</loc>
-      
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -111,24 +66,9 @@
   
     
     <url>
-      <loc>/images/image_optim_cache.yml</loc>
+      <loc>https://dkopecek.github.io/usbguard//documentation/cpp-api.html</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/</loc>
-      
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -141,24 +81,9 @@
   
     
     <url>
-      <loc>/documentation/installation.html</loc>
+      <loc>https://dkopecek.github.io/usbguard//blog/</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/blog/</loc>
-      
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -171,24 +96,9 @@
   
     
     <url>
-      <loc>/license.html</loc>
+      <loc>https://dkopecek.github.io/usbguard//development.html</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/css/main.css</loc>
-      
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -201,9 +111,9 @@
   
     
     <url>
-      <loc>/documentation/portability.html</loc>
+      <loc>https://dkopecek.github.io/usbguard//images/image_optim_cache.yml</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -216,9 +126,99 @@
   
     
     <url>
-      <loc>/documentation/rule-language.html</loc>
+      <loc>https://dkopecek.github.io/usbguard//</loc>
       
-        <lastmod>2015-04-01T14:55:06+02:00</lastmod>
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://dkopecek.github.io/usbguard//documentation/installation.html</loc>
+      
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://dkopecek.github.io/usbguard//blog/</loc>
+      
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://dkopecek.github.io/usbguard//license.html</loc>
+      
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://dkopecek.github.io/usbguard//css/main.css</loc>
+      
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://dkopecek.github.io/usbguard//documentation/portability.html</loc>
+      
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://dkopecek.github.io/usbguard//documentation/rule-language.html</loc>
+      
+        <lastmod>2015-04-01T14:58:08+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
