@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  
+  <title>Compilation And Instalation | USBGuard</title>
+  
+  
+  <meta name="description" content="Witty description here.
+">
+  
+    <meta name="keywords" content="usb, usb whitelist, usb blacklist, BadUSB, security,">
+  
+    
+  <link href="/css/main.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link rel="canonical" href="/documentation/compilation.html">
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" type="application/atom+xml" title="USBGuard" href="/atom.xml"/>
+  
+  <!-- Social media content metadata -->
+
+
+
+  
+ 
+</head>
+  <body>
+    <main class="wrap">
+      
+    <header role="banner">
+      <a href=""><img src="/images/banner-xl.png" srcset="/images/banner-small.png 200w, /images/banner-med.png 641w, /images/banner-large.png 1025w, /images/banner-xl.png 1441w" alt="USBGuard banner image" title="USBGuard banner image" class="center"></a>
+    </header>
+  
+  
+      <nav class="navbar">
+  <nav class="row">
+    <div id="nav">
+      <ul class="columns medium-8 left primary-nav">
+
+	<li id="toggleMenu"><a href="#nav">Menu</a></li>
+	<li id="hideMenu"><a href="#toggleMenu">Menu</a></li>
+	
+	
+	  
+		  
+		  <li><a href="/">Home</a></li>
+		    
+	  
+	
+	  
+		  
+		  <li><a href="/blog/">Blog</a></li>
+		    
+	  
+	
+	  
+	    <li class="dropdown">
+	      <a href="">Documentation</a>
+		<ul>
+		  
+		    <li><a href="/documentation/compilation.html">Compilation</a></li>
+		  
+		    <li><a href="/documentation/compilation.html">Installation</a></li>
+		  
+		    <li><a href="/documentation/configuration.html">Configuration</a></li>
+		  
+		    <li><a href="/documentation/rule-language.html">Rule Language</a></li>
+		  
+		    <li><a href="/documentation/cpp-api.html">C++ API</a></li>
+		  
+		    <li><a href="/documentation/portability.html">Portability</a></li>
+		  
+		</ul>
+	    </li>
+	
+	
+	  
+		  
+		  <li><a href="/development.html">Development</a></li>
+		    
+	  
+	
+	  
+		  
+		  <li><a href="/license.html">License</a></li>
+		    
+	  
+	
+      </ul>
+
+      <ul class="columns medium-4 right primary-nav">
+	
+	  <li class="right"><a href="https://dkopecek.github.io/usbguard/feed.xml"><span class="icon-feed socials"></span></a></li>
+	
+	  <li class="right"><a href="https://github.com/dkopecek/usbguard"><span class="icon-github socials"></span></a></li>
+	
+      </ul>
+    </div>
+  </nav>
+</nav>
+      <div class="row">
+
+  <header class="post-header">
+    <h1 class="post-title">Compilation And Instalation</h1>
+  </header>
+
+  <article class="post-content">
+    <p>If you want to compile the sources from a release tarball, you’ll have to install development files for:</p>
+
+<ul>
+  <li><a href="https://github.com/ClusterLabs/libqb">libqb</a> - used for IPC</li>
+  <li><a href="http://libsodium.org">libsodium</a> - used for hashing</li>
+  <li>systemd-devel - used for udev</li>
+</ul>
+
+<p>And then do:</p>
+
+<pre><code>$ ./configure
+$ make
+$ sudo make install
+</code></pre>
+
+<p>If you want to compile the sources in a cloned repository, there’s one additional step required:</p>
+
+<pre><code>$ git submodule init
+$ git submodule update
+</code></pre>
+
+<p>This will fetch the sources of <a href="https://github.com/cppformat/cppformat">cppformat</a>, <a href="https://github.com/nlohmann/json/">json</a><br />
+and <a href="https://github.com/gabime/spdlog">spdlog</a> which are used in this project too.</p>
+
+<p>If you want to modify the lexer and/or the parser, you’ll have to generate new source files for them. To learn how to do that, read <a href="src/Library/RuleParser/README.md">src/Library/RuleParser/README.md</a>.</p>
+
+<h2 id="pre-compiled-packages">Pre-compiled packages</h2>
+
+<h3 id="fedora-linux">Fedora Linux</h3>
+
+<p>Pre-compiled packages for Fedora 20, 21, 22 and rawhide are distributes using a Copr <a href="https://copr.fedoraproject.org/coprs/mildew/usbguard/">repository</a>.<br />
+You can install the repository by executing the following steps:</p>
+
+<pre><code>$ sudo yum install yum-plugin-copr
+$ sudo yum copr enable mildew/usbguard
+$ sudo yum install usbguard
+</code></pre>
+
+<p>To actually start the daemon, use:</p>
+
+<pre><code>$ sudo systemctl start usbguard.service
+</code></pre>
+
+  </article>
+
+</div>
+
+    </main>
+      <footer class="site-footer">
+  <div class="row">
+    <div class="small-6 columns">
+    </div>
+    <div class="small-6 columns">
+    </div>
+  </div>
+</footer> 
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+- title: "Home"
+  href: "/"
+
+- title: "Blog"
+  href: "/blog/"
+
+- title: "Documentation"
+  href: "/documentation/"
+  subcategories:
+    - subtitle: "Compilation"
+      subhref: "/documentation/compilation.html"
+    - subtitle: "Installation"
+      subhref: "/documentation/compilation.html"
+    - subtitle: "Configuration"
+      subhref: "/documentation/configuration.html"
+    - subtitle: "Rule Language"
+      subhref: "/documentation/rule-language.html"
+    - subtitle: "C++ API"
+      subhref: "/documentation/cpp-api.html"
+    - subtitle: "Portability"
+      subhref: "/documentation/portability.html"
+
+- title: "Development"
+  href: "/development.html"
+
+- title: "License"
+  href: "/license.html"

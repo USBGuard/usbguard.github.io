@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <main class="wrap">
+      {% include header.html %}
+      {% include navigation.html %}
+      <article class="row">
+	<section class="small-12 large-8 columns page-content">
+	  {{ content }}
+	</section>
+	{% include asides/recent_posts.html %}
+      </article>
+    </main>
+      {% include footer.html %}
+  </body>
+</html>
