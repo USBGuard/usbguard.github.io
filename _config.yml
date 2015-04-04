@@ -2,7 +2,7 @@
 title: USBGuard
 email: dkopecek@redhat.com
 
-keywords: usb, usb whitelist, usb blacklist, BadUSB, security,
+keywords: usbguard, usb policy, usb, usb whitelist, usb blacklist, BadUSB, usb reprogramming, usb security
 
 description: > # this means to ignore newlines until "baseurl:"
   Witty description here.
