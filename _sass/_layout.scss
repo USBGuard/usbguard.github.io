@@ -36,6 +36,12 @@
     margin: $spacing-unit;
 }
 
+.article.row.post-content post-header {
+    margin: $spacing-unit;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .post-title {
     font-size: 2em;
     letter-spacing: -1px;
