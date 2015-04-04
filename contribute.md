@@ -23,8 +23,11 @@ In the commit message, please state:
 
  * What changed
  * Why it changed
- * If the change is related to an tracket issue, include a reference to it
+ * If the change is related to a tracked issue, include a reference to it
 
 ## List of contributors
 
-TBA
+The following list contains names of individuals, sorted by the last name, who are actively working on the project or contributed patches to the upstream repositories. **Thanks!**
+
+> Kitt, Stephen
+> Kopeček, Daniel
