@@ -11,4 +11,4 @@ The Qt applet repository is located at:
 
 [https://github.com/dkopecek/usbguard-applet-qt/](https://github.com/dkopecek/usbguard-applet-qt/)
 
-Please read the [Contribute](/contribute) page if you want to contribute to the USBGuard project.
+Please read the [Contribute](/usbguard/contribute) page if you want to contribute to the USBGuard project.
