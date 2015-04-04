@@ -27,7 +27,9 @@ In the commit message, please state:
 
 ## List of contributors
 
-The following list contains names of individuals, sorted by the last name, who are actively working on the project or contributed patches to the upstream repositories. **Thanks!**
+The following list contains names of individuals, sorted by the last name, who are actively working on the project or contributed patches to the upstream repositories:
 
-> Kitt, Stephen
-> Kopeček, Daniel
+ * Kitt, Stephen
+ * Kopeček, Daniel
+
+**Thanks!**
