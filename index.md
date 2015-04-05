@@ -3,7 +3,7 @@ layout: home
 title: home
 ---
 
-The USBGuard software framework helps to protect your computer against rogue USB devices by implementing basic whitelisting and blacklisting capabilities based on device attributes.
+The USBGuard software framework helps to protect your computer against rogue USB devices (a.k.a. [BadUSB](https://srlabs.de/badusb)) by implementing basic whitelisting and blacklisting capabilities based on device attributes.
 
 ## Features
 
