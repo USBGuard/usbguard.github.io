@@ -55,6 +55,23 @@
   text-justify: inter-word;
 }
 
+.releases-content {
+  margin-bottom: $spacing-unit;
+  padding: $spacing-unit;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.releases-content h3 {
+  border-bottom: 1px solid grey;
+  width: 100%;
+  font-weight: bold;
+}
+
+.releases-content h4 {
+  font-weight: bold;
+}
+
 .post-list {
     margin-left: 0;
     list-style: none;

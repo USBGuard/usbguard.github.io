@@ -1,6 +1,6 @@
 ---
 title: Releases
-layout: page
+layout: releases
 date: 2015-04-11 12:00:00+02:00
 comments: false
 sitemap:
