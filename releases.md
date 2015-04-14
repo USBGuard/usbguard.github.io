@@ -4,15 +4,24 @@ layout: releases
 date: 2015-04-11 12:00:00+02:00
 comments: false
 sitemap:
-  lastmod: 2015-04-11 12:00:00+02:00
+  lastmod: 2015-04-14 12:00:00+02:00
   priority: 0.5
   changefreq: monthly
   exclude: 'no'
 ---
 
-The latest release of usbguard is [**usbguard-0.3p2**](https://dkopecek.github.io/usbguard/dist/usbguard-0.3p2.tar.gz).
+The latest release of usbguard is [**usbguard-0.3p3**](https://dkopecek.github.io/usbguard/dist/usbguard-0.3p3.tar.gz).
 
 The latest release of usbguard-applet-qt is [**usbguard-applet-qt-0.3**](https://dkopecek.github.io/usbguard/dist/usbguard-applet-qt-0.3.tar.gz).
+
+### usbguard-0.3p3
+
+Download: [usbguard-0.3p3.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.3p3.tar.gz)
+
+#### Major Changes
+
+ * use `AC_CHECK_HEADER` instead of a pkg-config based check for json and spdlog 
+ * make check target available
 
 ### usbguard-0.3p2
 
