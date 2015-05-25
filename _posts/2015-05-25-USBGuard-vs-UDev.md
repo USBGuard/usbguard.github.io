@@ -71,6 +71,7 @@ The *usb-unauthorized* shell script can be viewed here: https://gist.github.com/
 ## USBGuard based solution
 
 `/etc/usbguard/rules.conf`:
+
 ~~~
 allow 1050:0010 serial "0001234567" name "Yubico Yubikey II" with-interface "03:01:01"
 ~~~
