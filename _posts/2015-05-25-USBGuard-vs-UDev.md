@@ -48,7 +48,8 @@ It's possible to write third-party C++ applications that can interact with the d
 Example based on [https://gist.github.com/grawity/52aad7d648735a236b0d](https://gist.github.com/grawity/52aad7d648735a236b0d).
 
 `50-usb-deauthorize.rules` udev rules file:
-```
+
+~~~
 ACTION!="add", GOTO="deauthorize_end"
 SUBSYSTEM!="usb", GOTO="deauthorize_end"
 TEST!="authorized", GOTO="deauthorize_end"
@@ -63,16 +64,16 @@ ENV{ID_VENDOR}=="Yubico", ENV{ID_MODEL}=="Yubikey_NEO*", ENV{valid}="1"
 ENV{valid}=="1", ENV{valid}="", ATTR{authorized}="1", GOTO="deauthorize_end"
 RUN+="/usr/local/bin/usb-unauthorized $devpath"
 LABEL="deauthorize_end"
-```
+~~~
 
 The *usb-unauthorized* shell script can be viewed here: https://gist.github.com/grawity/52aad7d648735a236b0d#file-usb-unauthorized
 
 ## USBGuard based solution
 
 `/etc/usbguard/rules.conf`:
-```
+~~~
 allow 1050:0010 serial "0001234567" name "Yubico Yubikey II" with-interface "03:01:01"
-```
+~~~
 
 Note that the above rule also checks that the Yubikey interacts with the system by using only one USB HID (keyboard) interface.
 
