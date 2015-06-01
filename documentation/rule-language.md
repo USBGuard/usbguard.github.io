@@ -3,7 +3,10 @@ title: Rule Language
 layout: page
 ---
 
-The USBGuard daemon decides which USB device to authorize based on a policy defined by a set of rules. When an USB device is inserted into the system, the daemon scans the existing rules sequentially and when a matching rule is found, it either authorizes (allows), deauthorizes (blocks) or removes (rejects) the device, based on the rule target. If no matching rule is found, the decision is based on an implicit default target. This implicit default is to block the device until a decision is made by the user.
+The USBGuard daemon decides which USB device to authorize based on a policy defined by a set of rules. When an USB device is inserted into
+the system, the daemon scans the existing rules sequentially and when a matching rule is found, it either authorizes (allows), deauthorizes
+(blocks) or removes (rejects) the device, based on the rule target. If no matching rule is found, the decision is based on an implicit default
+target. This implicit default is to block the device until a decision is made by the user.
 
 The rule language grammar, expressed in a BNF-like syntax, is the following:
 
@@ -19,9 +22,9 @@ The rule language grammar, expressed in a BNF-like syntax, is the following:
     device_attributes ::= device_attributes | attribute.
     device_attributes ::= .
 
-See the [Device attributes](#device-attributes) section for the list of available attributes and their syntax.
+See [Device attributes](https://github.com/dkopecek/usbguard#device-attributes) section for the list of available attributes and their syntax.
 
-## Targets
+### Targets
 
 The target of a rule specifies whether the device will be authorized for use or not. Three types of target are recognized:
 
@@ -29,17 +32,23 @@ The target of a rule specifies whether the device will be authorized for use or 
  * `block` - deauthorize the device
  * `reject` - remove the device from the system
 
-## Device specification
+### Device specification
 
-Except the target, all the other fields of a rule need not be specified. Such a minimal rule will match any device and allows the policy creator to write an explicit default target (there's an implicit one too, more on that later). However, if one want's to narrow the applicability of a rule to a set of devices or one device only, it's possible to do so with a device id and/or device attributes.
+Except the target, all the other fields of a rule need not be specified. Such a minimal rule will match any device and
+allows the policy creator to write an explicit default target (there's an implicit one too, more on that later).
+However, if one want's to narrow the applicability of a rule to a set of devices or one device only, it's possible to
+do so with a device id and/or device attributes.
 
-### Device ID
+#### Device ID
 
-A USB device ID is the colon delimited pair *vendor\_id:product\_id*. All USB devices have this ID assigned by the manufacturer and it should uniquely identify a USB product. Both *vendor\_id* and *product\_id* are 16-bit numbers represented in hexadecimal base.
+A USB device ID is the colon delimited pair *vendor\_id:product\_id*. All USB devices have this
+ID assigned by the manufacturer and it should uniquely identify a USB product. Both *vendor\_id* and *product\_id* are 16-bit
+numbers represented in hexadecimal base.
 
-In the rule, it's possible to use an asterisk character to match either any device ID `*:*` or any product ID from a specific vendor, e.g. `1234:*`.
+In the rule, it's possible to use an asterisk character to match either any device ID `*:*` or any product ID from a
+specific vendor, e.g. `1234:*`.
 
-### Device attributes
+#### Device attributes
 
 (Please see [issue #11](https://github.com/dkopecek/usbguard/issues/11) and comment on the changes related to this section)
 
@@ -67,6 +76,22 @@ List of attributes:
 `port-id` is a platform specific USB port identification. On Linux it's in the form "b-n" where `b` and `n` are unsigned integers (e.g. "1-2", "2-4", ...).
 
 `interface-type` represents a USB interface and should be formated as three 8-bit numbers in hexadecimal base delimited by colon, i.e. `cc:ss:pp`. The numbers represent the interface class (`cc`), subclass (`ss`) and protocol (`pp`) as assigned by the [USB-IF](www.usb.org/about) ([List of assigned classes, subclasses and protocols](http://www.usb.org/developers/defined_class)). Instead of the subclass and protocol number, you may write an asterisk character (`\*`) to match all subclasses or protocols. Matching a specific class and a specific protocol is not allowed, i.e. if you use an asterisk as the subclass number, you have to use an asterisk for the protocol too.
+
+### Initial policy
+
+Using the `usbguard-generate-policy` tool, you can generate an initial policy for your system instead of writing one from scratch. The tool generates an **allow** policy for all devices connected to the system at the moment of execution. It has several options to tweak the resulting policy:
+
+ * `-P`: Don't generate port specific rules for devices without an iSerial value. Without this option, the tool will add a `via-port` attribute to any device that doesn't provide a serial number. This is a security measure to limit devices that cannot be uniquely identified to connect only via a specific port. This makes it harder to bypass the policy since the real device will ocupy the allowed USB port most of the time.
+
+ * `-t <target>`: Generate an explicit "catch all" rule with the specified target. The target can be one of the following values: `allow`, `block`, `reject`.
+
+The policy will be printed out on the standard output. It's a good idea to review the generated rules before using them on a system. The typical workflow for generating an initial policy could look like this:
+
+    # sudo usbguard-generate-policy > rules.conf
+    # vi rules.conf
+    (review/modify the rule set)
+    # sudo install -m 0600 -o root -g root rules.conf /etc/usbguard/rules.conf
+    # sudo systemctl restart usbguard
 
 ### Example policies
 
