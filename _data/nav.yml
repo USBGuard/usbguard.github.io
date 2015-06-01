@@ -20,8 +20,5 @@
     - subtitle: "Portability"
       subhref: "/documentation/portability.html"
 
-- title: "Development"
+- title: "Development / Contribute"
   href: "/development.html"
-
-- title: "Contribute"
-  href: "/contribute.html"
