@@ -21,7 +21,7 @@ The rule language grammar, expressed in a BNF-like syntax, is the following:
 
 See [Device attributes](https://github.com/dkopecek/usbguard#device-attributes) section for the list of available attributes and their syntax.
 
-### Targets
+## Targets
 
 The target of a rule specifies whether the device will be authorized for use or not. Three types of target are recognized:
 
@@ -29,17 +29,17 @@ The target of a rule specifies whether the device will be authorized for use or 
  * `block` - deauthorize the device
  * `reject` - remove the device from the system
 
-### Device specification
+## Device specification
 
 Except the target, all the other fields of a rule need not be specified. Such a minimal rule will match any device and allows the policy creator to write an explicit default target (there's an implicit one too, more on that later). However, if one want's to narrow the applicability of a rule to a set of devices or one device only, it's possible to do so with a device id and/or device attributes.
 
-#### Device ID
+### Device ID
 
 A USB device ID is the colon delimited pair *vendor\_id:product\_id*. All USB devices have this ID assigned by the manufacturer and it should uniquely identify a USB product. Both *vendor\_id* and *product\_id* are 16-bit numbers represented in hexadecimal base.
 
 In the rule, it's possible to use an asterisk character to match either any device ID `*:*` or any product ID from a specific vendor, e.g. `1234:*`.
 
-#### Device attributes
+### Device attributes
 
 (Please see [issue #11](https://github.com/dkopecek/usbguard/issues/11) and comment on the changes related to this section)
 
@@ -66,7 +66,7 @@ List of attributes:
 
 `interface-type` represents a USB interface and should be formated as three 8-bit numbers in hexadecimal base delimited by colon, i.e. `cc:ss:pp`. The numbers represent the interface class (`cc`), subclass (`ss`) and protocol (`pp`) as assigned by the [USB-IF](www.usb.org/about) ([List of assigned classes, subclasses and protocols](http://www.usb.org/developers/defined_class)). Instead of the subclass and protocol number, you may write an asterisk character (`\*`) to match all subclasses or protocols. Matching a specific class and a specific protocol is not allowed, i.e. if you use an asterisk as the subclass number, you have to use an asterisk for the protocol too.
 
-### Initial policy
+## Initial policy
 
 Using the `usbguard-generate-policy` tool, you can generate an initial policy for your system instead of writing one from scratch. The tool generates an **allow** policy for all devices connected to the system at the moment of execution. It has several options to tweak the resulting policy:
 
@@ -82,11 +82,11 @@ The policy will be printed out on the standard output. It's a good idea to revie
     # sudo install -m 0600 -o root -g root rules.conf /etc/usbguard/rules.conf
     # sudo systemctl restart usbguard
 
-### Example policies
+## Example policies
 
 The following examples show what to put into the `rules.conf` file in order to implement the given policy.
 
-#### Allow USB mass storage devices (USB flash disks) and block everything else
+### Allow USB mass storage devices (USB flash disks) and block everything else
 
 This policy will block any device that isn't just a mass storage device. Devices with a hidden keyboard interface in a USB flash disk will be blocked. Only devices with a single mass storage interface will be allowed to interact with the operating system. The policy consists of a single rule:
 
@@ -94,14 +94,14 @@ This policy will block any device that isn't just a mass storage device. Devices
 
 The blocking is implicit in this case because we didn't write a `block` rule. Implicit blocking is useful to desktop users because a desktop applet listening to USBGuard events can ask the user for a decision if an implicit target was selected for a device.
 
-#### Allow a specific Yubikey device to be connected via a specific port. Reject everything else on that port.
+### Allow a specific Yubikey device to be connected via a specific port. Reject everything else on that port.
 
     allow 1050:0011 name "Yubico Yubikey II" serial "0001234567" via-port "1-2" hash "044b5e168d40ee0245478416caf3d998"
     reject via-port "1-2"
 
 We could use just the hash to match the device. However, using the name and serial attributes allows the policy creator to quickly assign rules to specific devices without computing the hash. On the other hand, the hash is the most specific value we can use to identify a device in USBGuard so it's the best attribute to use if you want a rule to match just one device.
 
-#### Reject devices with suspicious combination of interfaces
+### Reject devices with suspicious combination of interfaces
 
 A USB flash disk which implements a keyboard or a network interface is very suspicious. The following set of rules forms a policy which allows USB flash disks and explicitly rejects devices with an additional and suspicious (as defined before) interface.
 
