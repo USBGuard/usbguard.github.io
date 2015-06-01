@@ -35,7 +35,7 @@ And to generate the *configure* script, run:
 
     $ ./autogen.sh
 
-If you want to modify the lexer and/or the parser, you'll have to generate new source files for them. To learn how to do that, read [src/Library/RuleParser/README.md](src/Library/RuleParser/README.md).
+If you want to modify the lexer and/or the parser, you'll have to generate new source files for them. To learn how to do that, read [src/Library/RuleParser/README.md](https://github.com/dkopecek/usbguard/blob/master/src/Library/RuleParser/README.md).
 
 ## Pre-compiled packages
 
