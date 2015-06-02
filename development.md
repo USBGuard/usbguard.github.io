@@ -17,7 +17,7 @@ USBGuard is an open-source project and anyone can contribute to it. There are ma
 
 ### Sending patches
 
-If you don't have a GitHub account and therefore cannot contribute your patches by forking the repository and creating a pull request, you can still send the patch via e-mail.
+If you don't have a GitHub account and therefore cannot [contribute your patches by forking the repository and creating a pull request](https://help.github.com/articles/using-pull-requests/), you can still send the patch via e-mail.
 
 The preferred way to prepare the patch is to get fresh copy of the git repository:
 
