@@ -3,9 +3,10 @@ layout: post
 title: Using USBGuard vs. UDev rules for USB device authorization
 author: Daniel Kopeček <dkopecek@redhat.com>
 date: 2015-05-25 10:30:00+02:00
+tags: [blog, udev, usbguard, usb whitelist]
 comments: true
 sitemap:
-  lastmod: 2015-05-25 10:30:00+02:00
+  lastmod: 2015-06-02 12:28:00+02:00
   priority: 0.5
   changefreq: monthly
   exclude: 'no'
