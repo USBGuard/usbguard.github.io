@@ -2,9 +2,10 @@
 layout: post
 title: "IPC interface access control"
 date: 2015-04-08 19:30:59+02:00
+tags: [blog, usbguard, IPC]
 comments: true
 sitemap:
-  lastmod: 2015-04-08 19:30:59+02:00
+  lastmod: 2015-06-02 12:29:00+02:00
   priority: 0.5
   changefreq: monthly
   exclude: 'no'
