@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IPC interface access control"
-author: Daniel Kopeček
+author: Daniel Kopeček <dkopecek@redhat.com>
 date: 2015-04-08 19:30:59+02:00
 tags: [blog, usbguard, IPC]
 comments: true
