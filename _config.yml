@@ -5,10 +5,13 @@ email: dkopecek@redhat.com
 keywords: usbguard, usb policy, usb, usb whitelist, usb blacklist, BadUSB, usb reprogramming, usb security
 
 description: > # this means to ignore newlines until "baseurl:"
-  Witty description here.
+  USBGuard project site.
 
 baseurl: https://dkopecek.github.io/usbguard
 url: / #Leave this, change the baseurl.
+
+gems:
+  - jekyll-sitemap
 
 header: yes
 header_sm: images/banner-small.png
