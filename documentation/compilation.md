@@ -37,11 +37,11 @@ And to generate the *configure* script, run:
 
 If you want to modify the lexer and/or the parser, you'll have to generate new source files for them. To learn how to do that, read [src/Library/RuleParser/README.md](https://github.com/dkopecek/usbguard/blob/master/src/Library/RuleParser/README.md).
 
-## Pre-compiled packages
+## OS packages
 
 ### Fedora Linux, RHEL or CentOS
 
-Pre-compiled packages for Fedora 20, 21, 22, rawhide and EPEL 7 (RHEL, CentOS) are distributes using a Copr [repository](https://copr.fedoraproject.org/coprs/mildew/usbguard/).
+Pre-compiled packages for Fedora 21, 22, 23, rawhide and EPEL 7 (RHEL, CentOS) are distributes using a Copr [repository](https://copr.fedoraproject.org/coprs/mildew/usbguard/).
 You can install the repository by executing the following steps:
 
     $ sudo yum install yum-plugin-copr
@@ -49,7 +49,19 @@ You can install the repository by executing the following steps:
     $ sudo yum install usbguard
     $ sudo yum install usbguard-applet-qt
 
+### Gentoo
+
+For Gentoo you can use the [stuge overlay](http://git.stuge.se/?p=stuge-overlay.git;a=summary) via layman:
+
+    $ layman -a stuge-overlay
+    $ emerge -av usbguard
+
+### Usage
+
 To actually start the daemon, use:
 
     $ sudo systemctl start usbguard.service
+
+You can interact with the daemon using either the CLI (see usbguard(1)) or the GUI Qt applet, which will also notify you about device events and ask for authorization of devices that don't match any rule in the policy. To start the applet, use the following command:
+
     $ usbguard-applet-qt
