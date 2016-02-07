@@ -10,7 +10,6 @@ The USBGuard software framework helps to protect your computer against rogue USB
  * Rule language for writting USB device authorization policies
  * Daemon component with an IPC interface for dynamic interaction and policy enforcement
  * C++ API for interacting with the daemon component implemented in a shared library
- * A "oneshot" component for static, on-demand processing of the policy
 
 ## Supported Operating Systems
 
