@@ -33,7 +33,7 @@ Download: [usbguard-0.4.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguar
  * Fixed several bugs.
  * Resolved issues: #46, #45, #41, #40, #37, #32, #31, #28, #25, #24, #21, #16, #13, #9, #4
 
-##### **WARNING**: Backwards incompatible changes
+#### **WARNING**: Backwards incompatible changes
 
  * The device hashing procedure was altered and generates different hash values. If you are using the hash attribute in your rules, you'll have to update the values.
  * The bundled libsodium and libqb were removed. You'll have to compile and install them separately if your distribution doesn't provide them as packages.
