@@ -1,18 +1,42 @@
 ---
 title: Releases
 layout: releases
-date: 2015-04-11 12:00:00+02:00
+date: 2016-02-08 00:00:00+02:00
 comments: false
 sitemap:
-  lastmod: 2015-04-14 12:00:00+02:00
+  lastmod: 2016-02-08 12:00:00+02:00
   priority: 0.5
   changefreq: monthly
   exclude: 'no'
 ---
 
-The latest release of usbguard is [**usbguard-0.3p3**](https://dkopecek.github.io/usbguard/dist/usbguard-0.3p3.tar.gz).
+The latest release of usbguard is [**usbguard-0.4**](https://dkopecek.github.io/usbguard/dist/usbguard-0.4.tar.gz).
 
 The latest release of usbguard-applet-qt is [**usbguard-applet-qt-0.3**](https://dkopecek.github.io/usbguard/dist/usbguard-applet-qt-0.3.tar.gz).
+
+### usbguard-0.4
+
+Download: [usbguard-0.4.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.4.tar.gz)
+
+#### Major Changes
+
+ * The daemon is now capable of dropping process capabilities and uses a seccomp based syscall whitelist. Options to enable these features were added to the usbguard-daemon command.
+ * Devices connected at the start of the daemon are now recognized and the DevicePresent signal is sent for each of them.
+ * New configuration options for setting the implicit policy target and how to handle the present devices are now available.
+ * String values read from the device are now properly escaped and length limits on these values are enforced.
+ * The library API was extended with the Device and DeviceManager classes.
+ * Implemented the usbguard CLI, see usbguard(1) for available commands.
+ * Initial authorization policies can be now easily generated using the `usbguard generate-policy` command.
+ * Extended the rule language with rule conditions. See usbguard-rules.conf(5) for details.
+ * Moved logging code into the shared library. You can use static methods of the Logger class to configure logging behaviour.
+ * Removed the bundled libsodium and libqb libraries.
+ * Fixed several bugs.
+ * Resolved issues: #46, #45, #41, #40, #37, #32, #31, #28, #25, #24, #21, #16, #13, #9, #4
+
+##### **WARNING**: Backwards incompatible changes
+
+ * The device hashing procedure was altered and generates different hash values. If you are using the hash attribute in your rules, you'll have to update the values.
+ * The bundled libsodium and libqb were removed. You'll have to compile and install them separately if your distribution doesn't provide them as packages.
 
 ### usbguard-0.3p3
 
