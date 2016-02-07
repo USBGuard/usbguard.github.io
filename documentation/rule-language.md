@@ -3,23 +3,26 @@ title: Rule Language
 layout: page
 ---
 
-The USBGuard daemon decides which USB device to authorize based on a policy defined by a set of rules. When an USB device is inserted into the system, the daemon scans the existing rules sequentially and when a matching rule is found, it either authorizes (allows), deauthorizes (blocks) or removes (rejects) the device, based on the rule target. If no matching rule is found, the decision is based on an implicit default target. This implicit default is to block the device until a decision is made by the user.
+The USBGuard daemon decides which USB device to authorize based on a policy defined by a set of rules. When an USB device is inserted into
+the system, the daemon scans the existing rules sequentially and when a matching rule is found, it either authorizes (allows), deauthorizes
+(blocks) or removes (rejects) the device, based on the rule target. If no matching rule is found, the decision is based on an implicit default
+target. This implicit default is to block the device until a decision is made by the user.
 
 The rule language grammar, expressed in a BNF-like syntax, is the following:
 
-    rule ::= target device.
+    rule ::= target device_id device_attributes conditions.
 
     target ::= "allow" | "block" | "reject".
-
-    device ::= device_id device_attributes.
-    device ::= .
 
     device_id ::= "*:*" | vendor_id ":*" | vendor_id ":" product_id.
 
     device_attributes ::= device_attributes | attribute.
     device_attributes ::= .
 
-See [Device attributes](https://github.com/dkopecek/usbguard#device-attributes) section for the list of available attributes and their syntax.
+    conditions ::= conditions | condition.
+    conditions ::= .
+
+See [Device attributes](https://github.com/dkopecek/usbguard#device-attributes) section for the list of available attributes and [Conditions](https://github.com/dkopecek/usbguard#conditions) for the list of supported rule conditions.
 
 ## Targets
 
@@ -31,19 +34,27 @@ The target of a rule specifies whether the device will be authorized for use or 
 
 ## Device specification
 
-Except the target, all the other fields of a rule need not be specified. Such a minimal rule will match any device and allows the policy creator to write an explicit default target (there's an implicit one too, more on that later). However, if one want's to narrow the applicability of a rule to a set of devices or one device only, it's possible to do so with a device id and/or device attributes.
+Except the target, all the other fields of a rule need not be specified. Such a minimal rule will match any device and
+allows the policy creator to write an explicit default target (there's an implicit one too, more on that later).
+However, if one want's to narrow the applicability of a rule to a set of devices or one device only, it's possible to
+do so with a device id and/or device attributes.
 
 ### Device ID
 
-A USB device ID is the colon delimited pair *vendor\_id:product\_id*. All USB devices have this ID assigned by the manufacturer and it should uniquely identify a USB product. Both *vendor\_id* and *product\_id* are 16-bit numbers represented in hexadecimal base.
+A USB device ID is the colon delimited pair *vendor\_id:product\_id*. All USB devices have this
+ID assigned by the manufacturer and it should uniquely identify a USB product. Both *vendor\_id* and *product\_id* are 16-bit
+numbers represented in hexadecimal base.
 
-In the rule, it's possible to use an asterisk character to match either any device ID `*:*` or any product ID from a specific vendor, e.g. `1234:*`.
+In the rule, it's possible to use an asterisk character to match either any device ID `*:*` or any product ID from a
+specific vendor, e.g. `1234:*`.
 
 ### Device attributes
 
 (Please see [issue #11](https://github.com/dkopecek/usbguard/issues/11) and comment on the changes related to this section)
 
-Device attributes are specific value read from the USB device after it's inserted to the system. Which attributes are available is defined bellow. Some of the attributes are derived or based on attributes read directly from the device. The value of an attribute is represented as a double-quoted string.
+Device attributes are specific value read from the USB device after it's inserted to the system. Which attributes are
+available is defined bellow. Some of the attributes are derived or based on attributes read directly from the device.
+The value of an attribute is represented as a double-quoted string.
 
 List of attributes:
 
@@ -66,17 +77,53 @@ List of attributes:
 
 `interface-type` represents a USB interface and should be formated as three 8-bit numbers in hexadecimal base delimited by colon, i.e. `cc:ss:pp`. The numbers represent the interface class (`cc`), subclass (`ss`) and protocol (`pp`) as assigned by the [USB-IF](http://www.usb.org/about) ([List of assigned classes, subclasses and protocols](http://www.usb.org/developers/defined_class)). Instead of the subclass and protocol number, you may write an asterisk character (`\*`) to match all subclasses or protocols. Matching a specific class and a specific protocol is not allowed, i.e. if you use an asterisk as the subclass number, you have to use an asterisk for the protocol too.
 
+## Conditions
+
+Whether a rule that matches a device will be applied or not can be further restricted using rule conditions. If the condition expression is met at the rule evaluation time, then the rule target is applied for the device. A condition expression is met if it evaluates to true. Otherwise, the rule evaluation continues with the next rule. A rule conditions has the following syntax:
+
+     if [!]condition
+     if [operator] { [!]conditionA [!]conditionB ... }
+
+Optionally, an exclamation mark (`!`) can be used to negate the result of a condition.
+
+Interpretation of the set operator:
+
+ * `all-of`: Evaluate to true if all of the specified conditions evaluated to true.
+ * `one-of`: Evaluate to true if one of the specified conditions evaluated to true.
+ * `none-of`: Evaluate to true if none of the specified conditions evaluated to true.
+ * `equals`: Same as `all-of`.
+ * `equals-ordered`: Same as `all-of`.
+
+List of conditions:
+
+ * `localtime(time_range)`: Evaluates to true if the local time is in the specified time range. `time_range` can be written either as `HH:MM[:SS]` or `HH:MM[:SS]-HH:MM[:SS]`.
+ * `allowed-matches(query)`: Evaluates to true if an allowed device matches the specified query. The query uses the rule syntax. **Conditions in the query are not evaluated**.
+ * `rule-applied`: Evaluates to true if the rule currently being evaluated ever matched a device.
+ * `rule-applied(past_duration)`: Evaluates to true if the rule currently being evaluated matched a device in the past duration of time specified by the parameter. `past_duration` can be written as `HH:MM:SS`, `HH:MM`, or `SS`.
+ * `rule-evaluated`: Evaluates to true if the rule currently being evaluated was ever evaluated before.
+ * `rule-evaluated(past_duration)`: Evaluates to true if the rule currently being evaluated was evaluated in the pas duration of time specified by the parameter. `past_duration` can be written as `HH:MM:SS`, `HH:MM`, or `SS`.
+ * `random`: Evaluates to true/false with a probability of `p=0.5`.
+ * `random(p_true)`: Evaluates to true with the specified probability `p_true`.
+ * `true`: Evaluates always to true.
+ * `false`: Evaluates always to false.
+
 ## Initial policy
 
-Using the `usbguard-generate-policy` tool, you can generate an initial policy for your system instead of writing one from scratch. The tool generates an **allow** policy for all devices connected to the system at the moment of execution. It has several options to tweak the resulting policy:
+Using the `usbguard` CLI tool and its `generate-policy` subcommand, you can generate an initial policy for your system instead of writing one from scratch. The tool generates an **allow** policy for all devices connected to the system at the moment of execution. It has several options to tweak the resulting policy:
+
+ * `-p`: Generate port specific rules for all devices. By default, port specific rules are generated only for devices which do not export an iSerial value. See the `-P` option for more details.
 
  * `-P`: Don't generate port specific rules for devices without an iSerial value. Without this option, the tool will add a `via-port` attribute to any device that doesn't provide a serial number. This is a security measure to limit devices that cannot be uniquely identified to connect only via a specific port. This makes it harder to bypass the policy since the real device will ocupy the allowed USB port most of the time.
 
  * `-t <target>`: Generate an explicit "catch all" rule with the specified target. The target can be one of the following values: `allow`, `block`, `reject`.
 
+ * `-X`: Don't generate a hash attribute for each device.
+
+ * `-H`: Generate a hash-only policy.
+
 The policy will be printed out on the standard output. It's a good idea to review the generated rules before using them on a system. The typical workflow for generating an initial policy could look like this:
 
-    # sudo usbguard-generate-policy > rules.conf
+    # usbguard generate-policy > rules.conf
     # vi rules.conf
     (review/modify the rule set)
     # sudo install -m 0600 -o root -g root rules.conf /etc/usbguard/rules.conf
@@ -112,3 +159,12 @@ A USB flash disk which implements a keyboard or a network interface is very susp
     reject with-interface all-of { 08:*:* 02:*:* }
    
 The policy rejects all USB flash disk devices with an interface from the HID/Keyboard, Communications and Wireless classes. Please note that blacklisting is the wrong approach and you shouldn't just blacklist a set of devices and allow the rest. The policy above assumes that blocking is the implicit default. Rejecting a set of devices considered as "bad" is a good approach how to limit the exposure of the OS to such devices as much as possible.
+
+### Allow a keyboard-only USB device only if there isn't already a USB device with a keyboard interface allowed
+
+    allow with-interface one-of { 03:00:01 03:01:01 } if !allowed-matches(with-interface one-of { 03:00:01 03:01:01 })
+
+### Play "Russian roulette" with USB devices
+
+    allow if random(0.1666)
+    reject
