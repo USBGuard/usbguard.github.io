@@ -54,7 +54,9 @@ USBGuard is [licensed under the **GPLv2**](/usbguard/license). **By submitting a
 
 The following list contains names of individuals, sorted by the last name, who are actively working on the project or contributed in some way to the project:
 
+ * Deppenwiese, Philipp
  * Kitt, Stephen
  * Kopeček, Daniel
+ * Sroka, Radovan
 
 **Thanks!**
