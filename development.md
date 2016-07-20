@@ -7,10 +7,6 @@ The USBGuard project uses github for tracking issues and the overall development
 
 [https://github.com/dkopecek/usbguard/](https://github.com/dkopecek/usbguard/)
 
-The Qt applet repository is located at:
-
-[https://github.com/dkopecek/usbguard-applet-qt/](https://github.com/dkopecek/usbguard-applet-qt/)
-
 ## Contribute
 
 USBGuard is an open-source project and anyone can contribute to it. There are many ways one can contribute to the project -- source code, documentation enhancements, translations, artwork, etc. A nice summary of different ways to contribute is given in an article by Andy Lester, [14 Ways to Contribute to Open Source without Being a Programming Genius or a Rock Star](http://blog.smartbear.com/programming/14-ways-to-contribute-to-open-source-without-being-a-programming-genius-or-a-rock-star/).
@@ -29,10 +25,6 @@ If you don't have a GitHub account and therefore cannot [contribute your patches
 The preferred way to prepare the patch is to get fresh copy of the git repository:
 
     $ git clone https://github.com/dkopecek/usbguard
-
-or
-
-    $ git clone https://github.com/dkopecek/usbguard-applet-qt
 
 commit the change locally and use:
 
@@ -54,9 +46,15 @@ USBGuard is [licensed under the **GPLv2**](/usbguard/license). **By submitting a
 
 The following list contains names of individuals, sorted by the last name, who are actively working on the project or contributed in some way to the project:
 
+ * amenophobis
+ * Beringer, Ian
+ * Cowgill, James
  * Deppenwiese, Philipp
  * Kitt, Stephen
  * Kopeček, Daniel
+ * Nicanor, Muri
+ * Palmer, Rebecca N.
  * Sroka, Radovan
+ * Stadelmann, Christian
 
 **Thanks!**
