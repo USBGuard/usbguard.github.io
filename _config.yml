@@ -2,6 +2,14 @@
 title: USBGuard
 email: dkopecek@redhat.com
 
+authors:
+  dkopecek:
+    name: Daniel Kopeček
+    email: dkopecek@redhat.com
+  mildew:
+    name: Daniel Kopeček
+    email: mildew@fedoraproject.org
+
 keywords: usbguard, usb policy, usb, usb whitelist, usb blacklist, BadUSB, usb reprogramming, usb security
 
 description: > # this means to ignore newlines until "baseurl:"
@@ -14,10 +22,10 @@ gems:
   - jekyll-sitemap
 
 header: yes
-header_sm: images/banner-small.png
-header_med: images/banner-med.png
-header_large: images/banner-large.png
-header_xl: images/banner-xl.png
+header_sm: images/usbguard-banner-200.svg
+header_med: images/usbguard-banner-600.svg
+header_large: images/usbguard-banner-640.svg
+header_xl: images/usbguard-banner-700.svg
 
 # Exclude our ruby stuff
 exclude: [.bundle, bin, vendor, Gemfile, Gemfile.lock, Rakefile, s3_website.yml, .last_optimized]

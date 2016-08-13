@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="342.07147"
+   height="72.051689"
+   id="svg4341"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="usbguard-banner-v15pr.svg">
+  <title
+     id="title5620">USBGuard project banner</title>
+  <defs
+     id="defs4343">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6385">
+      <stop
+         style="stop-color:#19aeff;stop-opacity:1;"
+         offset="0"
+         id="stop6387" />
+      <stop
+         style="stop-color:#19aeff;stop-opacity:0;"
+         offset="1"
+         id="stop6389" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6375">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6377" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop6379" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6385"
+       id="linearGradient6393"
+       x1="125.7619"
+       y1="29.878946"
+       x2="389.17566"
+       y2="29.878946"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.010671"
+     inkscape:cx="262.80028"
+     inkscape:cy="-68.800038"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1916"
+     inkscape:window-height="1036"
+     inkscape:window-x="1922"
+     inkscape:window-y="42"
+     inkscape:window-maximized="0"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-bottom="10"
+     fit-margin-right="10"
+     showborder="true"
+     inkscape:showpageshadow="false" />
+  <metadata
+     id="metadata4346">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>USBGuard project banner</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Daniel Kopeček</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:source>https://github.com/dkopecek/usbguard/</dc:source>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>USB</rdf:li>
+            <rdf:li>Guard</rdf:li>
+            <rdf:li>banner</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:description>USBGuard project website banner.</dc:description>
+        <dc:date>2016</dc:date>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(-75.892406,4.0148557)">
+    <g
+       style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0e232e;fill-opacity:1;stroke:none;font-family:TeX Gyre Adventor;-inkscape-font-specification:TeX Gyre Adventor"
+       id="text4945">
+      <path
+         d="m 173.29413,37.443091 0,-26.208 -7.672,0 0,26.208 c 0,6.495994 -2.464,8.512 -6.272,8.512 -3.92,0 -6.328,-2.072006 -6.328,-8.512 l 0,-26.208 -7.672,0 0,26.208 c 0,10.52799 5.82401,15.904 13.944,15.904 8.17599,0 14,-5.320011 14,-15.904"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5511" />
+      <path
+         d="m 205.02513,40.075091 c 0,-5.599994 -2.29601,-9.240003 -10.696,-12.376 -3.92,-1.455999 -4.032,-1.512 -4.592,-1.848 -1.512,-0.951999 -2.296,-2.240001 -2.296,-3.752 0,-2.463998 1.736,-4.2 4.256,-4.2 2.576,0 4.144,1.568003 4.368,4.368 l 7.952,0 c -0.392,-7.279993 -5.60001,-11.76 -12.264,-11.76 -6.66399,0 -12.04,5.208007 -12.04,11.76 0,5.207995 3.08001,9.184002 8.624,11.256 5.48799,2.071998 5.936,2.240001 7.168,3.192 1.232,0.951999 1.904,2.520002 1.904,4.2 0,2.967997 -2.296,5.04 -5.6,5.04 -3.416,0 -5.264,-1.680003 -5.6,-5.152 l -8.008,0 c 0.672,7.839992 6.32801,12.544 13.608,12.544 7.44799,0 13.216,-5.768007 13.216,-13.272"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5513" />
+      <path
+         d="m 237.19888,40.299091 c 0,-4.927995 -1.79201,-8.064002 -7.056,-10.248 3.304,-1.735998 4.592,-3.920004 4.592,-7.784 0,-3.863996 -1.736,-7.112002 -4.704,-9.016 -2.464,-1.567998 -5.04001,-2.016 -11.2,-2.016 l -8.512,0 0,41.384 11.032,0 c 10.63999,0 15.848,-4.760008 15.848,-12.32 m -7.728,-0.168 c 0,3.583996 -2.29601,5.152 -7.672,5.152 l -3.808,0 0,-10.584 3.64,0 c 5.31999,0 7.84,1.736004 7.84,5.432 m -2.408,-17.192 c 0,2.967997 -1.96001,4.256 -6.608,4.256 l -2.464,0 0,-8.456 3.136,0 c 3.976,0 5.936,1.344003 5.936,4.2"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5515" />
+      <path
+         d="m 284.80325,32.515091 0,-1.008 -27.048,0 0,7.168 17.136,0 c -2.23999,4.591995 -6.72,7.28 -12.152,7.28 -8.11999,0 -14.336,-6.104008 -14.336,-14 0,-7.783992 5.71201,-14.056 13.888,-14.056 4.816,0 8.79201,1.904004 11.368,5.488 l 9.016,0 c -2.68799,-7.447993 -11.2,-12.88 -20.216,-12.88 -12.09598,0 -21.784,9.464012 -21.784,21.336 0,12.095988 9.80002,21.504 22.512,21.504 12.20799,0 21.616,-9.576011 21.616,-20.832"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5517" />
+      <path
+         d="m 316.6585,52.619091 0,-31.024 -7.448,0 0,14.616 c 0,4.143996 -0.336,6.048001 -1.176,7.448 -1.11999,1.791998 -3.136,2.856 -5.656,2.856 -3.58399,0 -5.88,-1.512008 -5.88,-9.744 l 0,-15.176 -7.448,0 0,16.632 c 0,10.919989 4.59201,15.12 11.816,15.12 3.752,0 6.10401,-0.952003 8.904,-3.696 l 0,2.968 6.888,0"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5519" />
+      <path
+         d="m 354.04463,52.619091 0,-31.024 -6.832,0 0,4.144 c -2.576,-3.415997 -5.656,-4.872 -10.136,-4.872 -9.18399,0 -15.792,6.888009 -15.792,16.352 0,9.351991 6.55201,16.128 15.624,16.128 4.368,0 7.336,-1.400003 10.304,-4.76 l 0,4.032 6.832,0 m -7.056,-15.288 c 0,5.151995 -3.36001,9.184 -9.016,9.184 -5.432,0 -9.184,-3.696005 -9.184,-9.128 0,-5.655994 3.752,-9.688 9.072,-9.688 5.31999,0 9.128,3.976006 9.128,9.632"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5521" />
+      <path
+         d="m 373.70938,28.035091 0,-7.168 -0.56,0 c -3.192,0 -4.76,0.896003 -6.72,3.752 l 0,-3.024 -6.832,0 0,31.024 7.448,0 0,-17.248 c 0,-4.815995 2.184,-7.224 6.664,-7.336"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5523" />
+      <path
+         d="m 407.96388,52.619091 0,-41.384 -7.448,0 0,13.104 c -2.184,-2.407998 -5.768,-3.864 -9.688,-3.864 -8.67999,0 -15.512,7.280009 -15.512,16.576 0,9.183991 6.77601,16.296 15.568,16.296 4.2,0 7.28,-1.400003 10.248,-4.76 l 0,4.032 6.832,0 m -6.888,-15.68 c 0,5.375995 -3.97601,9.576 -9.016,9.576 -5.208,0 -9.24,-4.312005 -9.24,-9.8 0,-5.263995 3.976,-9.408 9.072,-9.408 5.20799,0 9.184,4.200005 9.184,9.632"
+         style="font-weight:bold;-inkscape-font-specification:TeX Gyre Adventor Bold;fill:#0e232e"
+         id="path5525" />
+    </g>
+    <g
+       id="g5609"
+       transform="matrix(0.82205729,0,0,0.82205729,54.384527,-25.409347)">
+      <path
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         id="rect3106"
+         d="m 43.21716,52.156957 c 0.08269,20.14075 6.656357,39.660101 28.441335,46.942713 20.65773,-9.325411 27.43252,-26.636834 26.91778,-46.87278"
+         style="fill:#0e232e;stroke:#19aeff;stroke-width:8.12703609;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="czc"
+         inkscape:connector-curvature="0"
+         id="path3883"
+         d="m 42.01401,55.815426 c -2.304822,-14.999127 17.779103,-14.368578 28.782235,-14.10998 11.00312,0.258598 30.576285,-1.854724 29.13472,14.07873"
+         style="fill:#19aeff;stroke:#19aeff;stroke-width:5.47860527;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         y="45.341103"
+         x="66.292854"
+         height="3.3771594"
+         width="4.1397438"
+         id="rect3912"
+         style="fill:#364e59;stroke:#364e59;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         y="45.395573"
+         x="72.393539"
+         height="3.3771594"
+         width="4.1397438"
+         id="rect3912-6"
+         style="fill:#364e59;stroke:#364e59;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         y="43.583515"
+         x="55.799835"
+         height="12.439082"
+         width="30.220303"
+         id="rect3948"
+         style="fill:#0e232e;stroke:#0e232e;stroke-width:2.79950762;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         y="46.492256"
+         x="64.202713"
+         height="4.0938597"
+         width="4.7761703"
+         id="rect3954"
+         style="fill:#19aeff;stroke:#19aeff;stroke-width:1.67355406;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <g
+         transform="matrix(0.71886574,0,0,0.71886574,46.92433,44.652313)"
+         id="text3978"
+         style="font-size:49.79320908px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#19aeff;fill-opacity:1;stroke:#19aeff;stroke-width:1.26464999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:TeX Gyre Adventor;-inkscape-font-specification:TeX Gyre Adventor Bold">
+        <path
+           inkscape:connector-curvature="0"
+           id="path3983"
+           style="fill:#19aeff;stroke:#19aeff;stroke-width:1.26464999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:TeX Gyre Adventor;-inkscape-font-specification:TeX Gyre Adventor Bold"
+           d="m 52.984503,39.327954 0,-0.896278 -24.05012,0 0,6.373531 15.236722,0 c -1.991726,4.083039 -5.97519,6.473117 -10.805126,6.473117 -7.220008,0 -12.747062,-5.427466 -12.747062,-12.448302 0,-6.921249 5.078915,-12.498095 12.348716,-12.498095 4.282212,0 7.817536,1.692972 10.108022,4.879734 l 8.016706,0 C 48.70229,24.589171 41.133712,19.759223 33.117013,19.759223 c -10.755323,0 -19.369558,8.415063 -19.369558,18.971213 0,10.755322 8.713822,19.120592 20.01687,19.120592 10.854908,0 19.220178,-8.514649 19.220178,-18.523074" />
+      </g>
+      <rect
+         y="46.436718"
+         x="72.841087"
+         height="4.0938597"
+         width="4.7761703"
+         id="rect3954-7"
+         style="fill:#19aeff;stroke:#19aeff;stroke-width:1.67355406;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+  </g>
+</svg>

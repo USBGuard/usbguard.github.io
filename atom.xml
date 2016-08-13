@@ -11,10 +11,12 @@ sitemap:
   <link href="{{ site.baseurl }}/"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ site.baseurl }}/</id>
+  {% for author in site.authors %}
   <author>
-    <name><![CDATA[{{ site.author | strip_html }}]]></name>
-    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
+    <name><![CDATA[{{ author[1].name | strip_html }}]]></name>
+    {% if author[1].email %}<email><![CDATA[{{ author[1].email }}]]></email>{% endif %}
   </author>
+  {% endfor %}
   <generator uri="http://jekyllrb.com/">Jekyll</generator>
 
   {% for post in site.posts limit: 10 %}
