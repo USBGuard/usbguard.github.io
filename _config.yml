@@ -3,12 +3,12 @@ title: USBGuard
 email: dkopecek@redhat.com
 
 authors:
-  dkopecek:
-    name: Daniel Kopeček
-    email: dkopecek@redhat.com
   mildew:
     name: Daniel Kopeček
     email: mildew@fedoraproject.org
+  dkopecek:
+    name: Daniel Kopeček
+    email: dkopecek@redhat.com
 
 keywords: usbguard, usb policy, usb, usb whitelist, usb blacklist, BadUSB, usb reprogramming, usb security
 
