@@ -39,7 +39,7 @@ The following command will allow user **joe** to read and modify the runtime par
 $ sudo usbguard add-user joe --parameters ALL
 ```
 
-Note that the command will set the ACL exactly to what is specified on the command line, not append to the existing ACL setting for the user in case they exist.
+Note that the command will set the ACL exactly to what is specified on the command line, not append to the existing ACL settings for the user in case they exist.
 
 ## Blocking new USB device while the screen is locked
 
@@ -67,7 +67,7 @@ Now adjust your screen locker shortcuts and setting to point to this wrapper scr
 
 ### Method #2: D-Bus screen (un)lock signals
 
-If you are using a desktop environment which has builtin screen locking support, then it probably signals the "screen (un)locked" state via D-Bus.
+If you are using a desktop environment which has built-in screen locking support, then it probably signals the "screen (un)locked" state via D-Bus.
 In that case you need to create a script to watch for these signals and set the `InsertedDevicePolicy` parameter appropriately.
 The script should be running in your session (refer to your desktop environment's documentation on how to automatically start the script after you log in).
 
