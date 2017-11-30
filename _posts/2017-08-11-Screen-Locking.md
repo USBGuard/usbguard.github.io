@@ -31,7 +31,7 @@ $ sudo usbguard set-parameter InsertedDevicePolicy block
 Now try to insert a USB device and it won't be authorized even if there's a rule in your policy that says otherwise. Devices connected before the parameter value change aren't affected and remain in the same state.
 
 Please note that for the examples below to work, you need to allow your desktop user to modify the USBGuard runtime parameters.
-This can be done either with [USBGuard IPC access control](https://dkopecek.github.io/usbguard/blog/2017/IPC-Access-Control) or by giving sudo permissions to run `usbguard set-parameter` without authentication.
+This can be done either with [USBGuard IPC access control](https://usbguard.github.io/blog/2017/IPC-Access-Control) or by giving sudo permissions to run `usbguard set-parameter` without authentication.
 
 The following command will allow user **joe** to read and modify the runtime parameters via USBGuard IPC:
 

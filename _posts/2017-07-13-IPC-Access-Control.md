@@ -12,7 +12,7 @@ sitemap:
   exclude: 'no'
 ---
 
-I have already covered how to configure `usbguard-daemon` IPC access control in a [previous post](https://dkopecek.github.io/usbguard//blog/2015/IPC-Access-Control).
+I have already covered how to configure `usbguard-daemon` IPC access control in a [previous post](https://usbguard.github.io//blog/2015/IPC-Access-Control).
 However, the [0.7.0 release](https://github.com/dkopecek/usbguard/releases/tag/usbguard-0.7.0) introduced another way to configure the same thing with more control over who can do what.
 
 Previously, one could only enable a user or group to use the whole IPC interface.

@@ -10,13 +10,13 @@ sitemap:
   exclude: 'no'
 ---
 
-The latest release of usbguard is [**usbguard-0.4**](https://dkopecek.github.io/usbguard/dist/usbguard-0.4.tar.gz).
+The latest release of usbguard is [**usbguard-0.4**](https://usbguard.github.io/dist/usbguard-0.4.tar.gz).
 
-The latest release of usbguard-applet-qt is [**usbguard-applet-qt-0.3**](https://dkopecek.github.io/usbguard/dist/usbguard-applet-qt-0.3.tar.gz).
+The latest release of usbguard-applet-qt is [**usbguard-applet-qt-0.3**](https://usbguard.github.io/dist/usbguard-applet-qt-0.3.tar.gz).
 
 ### usbguard-0.4
 
-Download: [usbguard-0.4.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.4.tar.gz)
+Download: [usbguard-0.4.tar.gz](https://usbguard.github.io/dist/usbguard-0.4.tar.gz)
 
 #### Major Changes
 
@@ -40,7 +40,7 @@ Download: [usbguard-0.4.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguar
 
 ### usbguard-0.3p3
 
-Download: [usbguard-0.3p3.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.3p3.tar.gz)
+Download: [usbguard-0.3p3.tar.gz](https://usbguard.github.io/dist/usbguard-0.3p3.tar.gz)
 
 #### Major Changes
 
@@ -49,7 +49,7 @@ Download: [usbguard-0.3p3.tar.gz](https://dkopecek.github.io/usbguard/dist/usbgu
 
 ### usbguard-0.3p2
 
-Download: [usbguard-0.3p2.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.3p2.tar.gz)
+Download: [usbguard-0.3p2.tar.gz](https://usbguard.github.io/dist/usbguard-0.3p2.tar.gz)
 
 #### Major Changes
 
@@ -57,7 +57,7 @@ Download: [usbguard-0.3p2.tar.gz](https://dkopecek.github.io/usbguard/dist/usbgu
 
 ### usbguard-0.3p1
 
-Download: [usbguard-0.3p1.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.3p1.tar.gz)
+Download: [usbguard-0.3p1.tar.gz](https://usbguard.github.io/dist/usbguard-0.3p1.tar.gz)
 
 #### Major Changes
 
@@ -65,7 +65,7 @@ Download: [usbguard-0.3p1.tar.gz](https://dkopecek.github.io/usbguard/dist/usbgu
 
 ### usbguard-0.3, usbguard-applet-qt-0.3
 
-Download: [usbguard-0.3.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.3.tar.gz), [usbguard-applet-qt-0.3.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-applet-qt-0.3.tar.gz)
+Download: [usbguard-0.3.tar.gz](https://usbguard.github.io/dist/usbguard-0.3.tar.gz), [usbguard-applet-qt-0.3.tar.gz](https://usbguard.github.io/dist/usbguard-applet-qt-0.3.tar.gz)
 
 #### Major Changes
 
@@ -86,7 +86,7 @@ Additionally, if the user under which you are running _usbguard-applet-qt_ isn't
 
 ### usbguard-0.2, usbguard-applet-qt-0.2
 
-Download: [usbguard-0.2.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-0.2.tar.gz), [usbguard-applet-qt-0.2.tar.gz](https://dkopecek.github.io/usbguard/dist/usbguard-applet-qt-0.2.tar.gz)
+Download: [usbguard-0.2.tar.gz](https://usbguard.github.io/dist/usbguard-0.2.tar.gz), [usbguard-applet-qt-0.2.tar.gz](https://usbguard.github.io/dist/usbguard-applet-qt-0.2.tar.gz)
 
 #### Major Changes
 

@@ -11,7 +11,7 @@ sitemap:
   exclude: 'no'
 ---
 
-I've received several requests for help with installation of the USBGuard framework on Debian/Ubuntu based systems. I thought that the existing generic instruction ([Documentation/Installation](https://dkopecek.github.io/usbguard/documentation/compilation.html)) would work, but after I installed a virtual Ubuntu 14.04 machine to try them out myself, I found out that they might be hard to follow for users which are not used to compile and install upstream sources -- and search, compile and install sources of the required dependencies.
+I've received several requests for help with installation of the USBGuard framework on Debian/Ubuntu based systems. I thought that the existing generic instruction ([Documentation/Installation](https://usbguard.github.io/documentation/compilation.html)) would work, but after I installed a virtual Ubuntu 14.04 machine to try them out myself, I found out that they might be hard to follow for users which are not used to compile and install upstream sources -- and search, compile and install sources of the required dependencies.
 
 On Ubuntu 14.04, for example, there's no package for the sodium library. The available NaCL library can't be used because it lacks some of the high-level API that libsodium implements and which is used in USBGuard.
 
