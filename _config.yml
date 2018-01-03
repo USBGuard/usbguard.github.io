@@ -15,10 +15,10 @@ keywords: usbguard, usb policy, usb, usb whitelist, usb blacklist, BadUSB, usb r
 description: > # this means to ignore newlines until "baseurl:"
   USBGuard project site.
 
-baseurl: https://usbguard.github.io
-url: / #Leave this, change the baseurl.
+baseurl:
+url: https://usbguard.github.io
 
-gems:
+plugins:
   - jekyll-sitemap
 
 header: yes
