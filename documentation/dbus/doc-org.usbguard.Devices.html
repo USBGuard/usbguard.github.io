@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>org.usbguard.Devices</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"></HEAD
+><BODY
+CLASS="refentry"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><H1
+><A
+NAME="gdbus-org.usbguard.Devices"
+></A
+>org.usbguard.Devices</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN6"
+></A
+><H2
+>Name</H2
+>org.usbguard.Devices&nbsp;--&nbsp;</DIV
+><DIV
+CLASS="refsynopsisdiv"
+><A
+NAME="AEN9"
+></A
+><H2
+>Methods</H2
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="synopsis"
+>&#13;<A
+HREF="#gdbus-method-org-usbguard-Devices.listDevices"
+>listDevices</A
+>       (IN  s     query,
+                   OUT a(us) devices);
+<A
+HREF="#gdbus-method-org-usbguard-Devices.applyDevicePolicy"
+>applyDevicePolicy</A
+> (IN  u     id,
+                   IN  u     target,
+                   IN  b     permanent,
+                   OUT u     rule_id);
+</PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN14"
+></A
+><H2
+>Signals</H2
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="synopsis"
+>&#13;<A
+HREF="#gdbus-signal-org-usbguard-Devices.DevicePresenceChanged"
+>DevicePresenceChanged</A
+> (u     id,
+                       u     event,
+                       s     target,
+                       s     device_rule,
+                       a{ss} attributes);
+<A
+HREF="#gdbus-signal-org-usbguard-Devices.DevicePolicyChanged"
+>DevicePolicyChanged</A
+>   (u     id,
+                       u     target_old,
+                       u     target_new,
+                       u     device_rule,
+                       u     rule_id,
+                       a{ss} attributes);
+</PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-interface-org-usbguard-Devices"
+></A
+><H2
+>Description</H2
+><P
+>    The org.usbguard.Devices interface provides access to USB
+    devices via the USBGuard daemon. It can be used to modify
+    the runtime authorization state of devices and to listen
+    for device events (insertion, removal, (de)authorization,
+    ...)
+</P
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-methods-org.usbguard.Devices"
+></A
+><H2
+>Method Details</H2
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-method-org-usbguard-Devices.listDevices"
+></A
+><H3
+>The listDevices() method</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;listDevices (IN  s     query,
+             OUT a(us) devices);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>      List devices that match the specified query. The query uses the rule
+      language syntax and the devices are returned as device specific rules.
+      The target in each rule represents the current authorization state of
+      the device. Order of the returned devices is not defined and should not
+      be relied upon.
+</P
+><P
+>      Example queries:
+       - 'match': Matches any device.
+       - 'allow': Matches only authorized devices.
+       - 'block': Matches only unauthorized devices.
+       - 'match with-interface one-of { 03:00:01 03:01:01 }': Matches any device with a HID/Keyboard interface.
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>IN s <TT
+CLASS="parameter"
+><I
+>query</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>A query, in the rule language syntax, for matching devices.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>OUT a(us) <TT
+CLASS="parameter"
+><I
+>devices</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>An array of (device_id, device_rule) tuples that match the query.</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-method-org-usbguard-Devices.applyDevicePolicy"
+></A
+><H3
+>The applyDevicePolicy() method</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;applyDevicePolicy (IN  u id,
+                   IN  u target,
+                   IN  b permanent,
+                   OUT u rule_id);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>                0 = Allow. 1 = Block. 2 = Reject.
+       <TT
+CLASS="parameter"
+><I
+>permanent</I
+></TT
+>: A boolean flag specifying whether an allow rule should be appended to the policy.
+       <TT
+CLASS="parameter"
+><I
+>rule_id</I
+></TT
+>: If permanent was set to true, the method will return an ID of the rule that was
+                 modified or created because of this request.
+</P
+><P
+>      Apply an authorization target to a device.
+</P
+><P
+>      If the permanent flag is set to True, a rule will be appended to the policy or an exiting device
+      rule will be modified in order to permanently store the authorization decision.
+</P
+><P
+>      Sucessfull exection of this method will cause the DevicePolicyChanged signal to be broadcasted if
+      the device authorization target was different than the applied target.
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>IN u <TT
+CLASS="parameter"
+><I
+>id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Device id of the device to authorize.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>IN u <TT
+CLASS="parameter"
+><I
+>target</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Device authorization target in numerical form.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>IN b <TT
+CLASS="parameter"
+><I
+>permanent</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+><DT
+><TT
+CLASS="literal"
+>OUT u <TT
+CLASS="parameter"
+><I
+>rule_id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-signals-org.usbguard.Devices"
+></A
+><H2
+>Signal Details</H2
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-signal-org-usbguard-Devices.DevicePresenceChanged"
+></A
+><H3
+>The "DevicePresenceChanged" signal</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;DevicePresenceChanged (u     id,
+                       u     event,
+                       s     target,
+                       s     device_rule,
+                       a{ss} attributes);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>               0 = Present, 1 = Insert, 2 = Update, 3 = Remove.
+       <TT
+CLASS="parameter"
+><I
+>target</I
+></TT
+>: The current authorization target of the device.
+       <TT
+CLASS="parameter"
+><I
+>device_rule</I
+></TT
+>: Device specific rule.
+       <TT
+CLASS="parameter"
+><I
+>attributes</I
+></TT
+>: A dictionary of device attributes and their values.
+</P
+><P
+>      Notify that a USB device was already present when USBGuard was started. Note
+      that currently this signal is of little use to 3rd-party application developers
+      as the signal won't reach any clients on the bus because the bus connections
+      are handled after the devices are processed. However, the internal processing
+      routines may change in the future so this signal is provided and documented
+      for completeness.
+</P
+><P
+>      The device attribute dictionary contains the following attributes:
+        - id (the USB device ID in the form VID:PID)
+        - name
+        - serial
+        - via-port
+        - hash
+        - parent-hash
+        - with-interface
+</P
+><P
+>      The USB interface types are represented as strings of the form AA:BB:CC, where AA,
+      BB, and CC are hexadecimal numbers representing the class, subclass and protocol
+      of the interface  as defined by the USB standard.
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>u <TT
+CLASS="parameter"
+><I
+>id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Device id of the device.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>u <TT
+CLASS="parameter"
+><I
+>event</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Type of the presence change event in numerical form.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>s <TT
+CLASS="parameter"
+><I
+>target</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+><DT
+><TT
+CLASS="literal"
+>s <TT
+CLASS="parameter"
+><I
+>device_rule</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+><DT
+><TT
+CLASS="literal"
+>a{ss} <TT
+CLASS="parameter"
+><I
+>attributes</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-signal-org-usbguard-Devices.DevicePolicyChanged"
+></A
+><H3
+>The "DevicePolicyChanged" signal</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;DevicePolicyChanged (u     id,
+                     u     target_old,
+                     u     target_new,
+                     u     device_rule,
+                     u     rule_id,
+                     a{ss} attributes);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>      Notify about a change of a USB device authorization target.
+</P
+><P
+>      The device attribute dictionary contains the following attributes:
+        - id (the USB device ID in the form VID:PID)
+        - name
+        - serial
+        - via-port
+        - hash
+        - parent-hash
+        - with-interface
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>u <TT
+CLASS="parameter"
+><I
+>id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Device id of the device</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>u <TT
+CLASS="parameter"
+><I
+>target_old</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Previous authorization target in numerical form.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>u <TT
+CLASS="parameter"
+><I
+>target_new</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Current authorization target in numerical form.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>u <TT
+CLASS="parameter"
+><I
+>device_rule</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+><DT
+><TT
+CLASS="literal"
+>u <TT
+CLASS="parameter"
+><I
+>rule_id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>A rule id of the matched rule. Otherwise a reserved rule id value is used.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>a{ss} <TT
+CLASS="parameter"
+><I
+>attributes</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>A dictionary of device attributes and their values.</P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+></BODY
+></HTML
+>

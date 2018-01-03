@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>org.usbguard</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"></HEAD
+><BODY
+CLASS="refentry"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><H1
+><A
+NAME="gdbus-org.usbguard"
+></A
+>org.usbguard</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN6"
+></A
+><H2
+>Name</H2
+>org.usbguard&nbsp;--&nbsp;</DIV
+><DIV
+CLASS="refsynopsisdiv"
+><A
+NAME="AEN9"
+></A
+><H2
+>Methods</H2
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="synopsis"
+>&#13;<A
+HREF="#gdbus-method-org-usbguard.getParameter"
+>getParameter</A
+> (IN  s name,
+              OUT s value);
+<A
+HREF="#gdbus-method-org-usbguard.setParameter"
+>setParameter</A
+> (IN  s name,
+              IN  s value,
+              OUT s previous_value);
+</PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN14"
+></A
+><H2
+>Signals</H2
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="synopsis"
+>&#13;<A
+HREF="#gdbus-signal-org-usbguard.ExceptionMessage"
+>ExceptionMessage</A
+> (s context,
+                  s object,
+                  s reason);
+</PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-interface-org-usbguard"
+></A
+><H2
+>Description</H2
+><P
+></P
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-methods-org.usbguard"
+></A
+><H2
+>Method Details</H2
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-method-org-usbguard.getParameter"
+></A
+><H3
+>The getParameter() method</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;getParameter (IN  s name,
+              OUT s value);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>       <TT
+CLASS="parameter"
+><I
+>name</I
+></TT
+>:
+       <TT
+CLASS="parameter"
+><I
+>value</I
+></TT
+>:
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>IN s <TT
+CLASS="parameter"
+><I
+>name</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+><DT
+><TT
+CLASS="literal"
+>OUT s <TT
+CLASS="parameter"
+><I
+>value</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-method-org-usbguard.setParameter"
+></A
+><H3
+>The setParameter() method</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;setParameter (IN  s name,
+              IN  s value,
+              OUT s previous_value);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>       <TT
+CLASS="parameter"
+><I
+>name</I
+></TT
+>:
+       <TT
+CLASS="parameter"
+><I
+>value</I
+></TT
+>:
+       <TT
+CLASS="parameter"
+><I
+>previous_value</I
+></TT
+>:
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>IN s <TT
+CLASS="parameter"
+><I
+>name</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+><DT
+><TT
+CLASS="literal"
+>IN s <TT
+CLASS="parameter"
+><I
+>value</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+><DT
+><TT
+CLASS="literal"
+>OUT s <TT
+CLASS="parameter"
+><I
+>previous_value</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+></P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-signals-org.usbguard"
+></A
+><H2
+>Signal Details</H2
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-signal-org-usbguard.ExceptionMessage"
+></A
+><H3
+>The "ExceptionMessage" signal</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;ExceptionMessage (s context,
+                  s object,
+                  s reason);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+></P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>s <TT
+CLASS="parameter"
+><I
+>context</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Description or identifier of the exception context.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>s <TT
+CLASS="parameter"
+><I
+>object</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Description or identifier of the object which caused the exception.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>s <TT
+CLASS="parameter"
+><I
+>reason</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Reason explaining why the exception was generated.</P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+></BODY
+></HTML
+>

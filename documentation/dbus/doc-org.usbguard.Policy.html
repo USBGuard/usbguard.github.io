@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>org.usbguard.Policy</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"></HEAD
+><BODY
+CLASS="refentry"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><H1
+><A
+NAME="gdbus-org.usbguard.Policy"
+></A
+>org.usbguard.Policy</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN6"
+></A
+><H2
+>Name</H2
+>org.usbguard.Policy&nbsp;--&nbsp;</DIV
+><DIV
+CLASS="refsynopsisdiv"
+><A
+NAME="AEN9"
+></A
+><H2
+>Methods</H2
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="synopsis"
+>&#13;<A
+HREF="#gdbus-method-org-usbguard-Policy.listRules"
+>listRules</A
+>  (IN  s     query,
+            OUT a(us) ruleset);
+<A
+HREF="#gdbus-method-org-usbguard-Policy.appendRule"
+>appendRule</A
+> (IN  s     rule,
+            IN  u     parent_id,
+            OUT u     id);
+<A
+HREF="#gdbus-method-org-usbguard-Policy.removeRule"
+>removeRule</A
+> (IN  u     id);
+</PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-interface-org-usbguard-Policy"
+></A
+><H2
+>Description</H2
+><P
+>   The Policy interface allows to modify the USBGuard authorization policy.
+</P
+></DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="gdbus-methods-org.usbguard.Policy"
+></A
+><H2
+>Method Details</H2
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-method-org-usbguard-Policy.listRules"
+></A
+><H3
+>The listRules() method</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;listRules (IN  s     query,
+           OUT a(us) ruleset);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>      List the current rule set (policy) used by the USBGuard daemon. The
+      rules are returned in the same order as they are evaluated.
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>IN s <TT
+CLASS="parameter"
+><I
+>query</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>A query, in the rule language syntax, for matching rules.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>OUT a(us) <TT
+CLASS="parameter"
+><I
+>ruleset</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>An array of (rule_id, rule) tuples.</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-method-org-usbguard-Policy.appendRule"
+></A
+><H3
+>The appendRule() method</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;appendRule (IN  s rule,
+            IN  u parent_id,
+            OUT u id);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>      Append a new rule to the current policy. Using the parent_id
+      parameter, the rule can be inserted anywhere in the policy,
+      not only at the end. When the rule is successfully appended,
+      the id assigned to the new rule is returned.
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>IN s <TT
+CLASS="parameter"
+><I
+>rule</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>The rule that should be appended to the policy.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>IN u <TT
+CLASS="parameter"
+><I
+>parent_id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>Rule id of the parent rule.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>OUT u <TT
+CLASS="parameter"
+><I
+>id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>The rule id assigned to the succesfully appended rule.</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="refsect2"
+><A
+NAME="gdbus-method-org-usbguard-Policy.removeRule"
+></A
+><H3
+>The removeRule() method</H3
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="programlisting"
+>&#13;removeRule (IN  u id);
+</PRE
+></TD
+></TR
+></TABLE
+><P
+>      Remove a rule from the current policy.
+</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>IN u <TT
+CLASS="parameter"
+><I
+>id</I
+></TT
+></TT
+>:</DT
+><DD
+><P
+>The rule id of the rule to be removed.</P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+></BODY
+></HTML
+>

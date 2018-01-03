@@ -19,6 +19,8 @@
       subhref: "/documentation/cpp-api.html"
     - subtitle: "Portability"
       subhref: "/documentation/portability.html"
+    - subtitle: "D-Bus"
+      subhref: "/documentation/dbus/usbguard-dbus.html"
 
 - title: "Contribute"
   href: "/development.html"
