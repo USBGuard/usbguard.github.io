@@ -6,7 +6,7 @@ date: 2017-08-11 10:00:00+02:00
 tags: [blog, usbguard, USB, screen locker, security]
 comments: true
 sitemap:
-  lastmod: 2017-08-11 10:00:00+02:00
+  lastmod: 2018-02-14 10:00:00+02:00
   priority: 0.5
   changefreq: monthly
   exclude: 'no'
