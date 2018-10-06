@@ -19,7 +19,7 @@ The `usbguard-daemon.conf` file is loaded by the USBGuard daemon after it parses
    A space delimited list of groupnames that the daemon will accept IPC connections from.
 
  * `ImplicitPolicyTarget=<target>`
-   How to treat devices that don't match any tule in the policy. Accepted values: allow, block, reject.
+   How to treat devices that don't match any rule in the policy. Accepted values: allow, block, reject.
 
  * `PresentDevicePolicy=<policy>`
    How to treat devices that are already connected when the daemon starts:
