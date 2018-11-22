@@ -1,5 +1,5 @@
 ---
-title: Compilation And Instalation
+title: Compilation And Installation
 layout: page
 ---
 
