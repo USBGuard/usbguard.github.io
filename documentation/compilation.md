@@ -58,6 +58,8 @@ For Gentoo you can use the [stuge overlay](https://github.com/das-labor/overlay)
 
 ### Usage
 
+**WARNING**: before you start using usbguard be sure to configure it first unless you know exactly what you are doing (all USB devices will get blocked). For more information on how to configure usbguard see [configuration](https://usbguard.github.io/documentation/configuration.html) and [rule language](https://usbguard.github.io/documentation/rule-language.html).
+
 To actually start the daemon, use:
 
     $ sudo systemctl start usbguard.service
