@@ -5,7 +5,7 @@ layout: page
 
 The USBGuard project uses github for tracking issues and the overall development process:
 
-[https://github.com/dkopecek/usbguard/](https://github.com/dkopecek/usbguard/)
+[https://github.com/USBGuard/usbguard/](https://github.com/USBGuard/usbguard/)
 
 ## Contribute
 
@@ -13,10 +13,7 @@ USBGuard is an open-source project and anyone can contribute to it. There are ma
 
 ### Reporting bugs or requesting features
 
-If you'd like to report a bug or request a feature, please use the [issue tracker](https://github.com/dkopecek/usbguard/issues) or, if you don't have a GitHub account, send your report/request via e-mail to [dkopecek@redhat.com](mailto:dkopecek@redhat.com).
-
- * [Link to report a bug](https://github.com/dkopecek/usbguard/issues/new?labels=bug)
- * [Link to request a feature](https://github.com/dkopecek/usbguard/issues/new?labels=enhancement)
+If you'd like to report a bug or request a feature, please use the [issue tracker](https://github.com/USBGuard/usbguard/issues).
 
 ### Sending patches
 
@@ -24,7 +21,7 @@ If you don't have a GitHub account and therefore cannot [contribute your patches
 
 The preferred way to prepare the patch is to get fresh copy of the git repository:
 
-    $ git clone https://github.com/dkopecek/usbguard
+    $ git clone https://github.com/USBGuard/usbguard
 
 commit the change locally and use:
 
@@ -44,17 +41,42 @@ USBGuard is [licensed under the **GPLv2**](/usbguard/license). **By submitting a
 
 ### List of Contributors
 
-The following list contains names of individuals, sorted by the last name, who are actively working on the project or contributed in some way to the project:
+The following list contains (nick)names of individuals who are actively working on the project or contributed in some way to the project:
 
- * amenophobis
- * Beringer, Ian
- * Cowgill, James
- * Deppenwiese, Philipp
- * Kitt, Stephen
- * Kopeček, Daniel
- * Nicanor, Muri
- * Palmer, Rebecca N.
- * Sroka, Radovan
- * Stadelmann, Christian
+* amenophobis
+* Allen Webb 
+* Bas van Schaik 
+* Christian Stadelmann 
+* Daniel Kopeček 
+* Dridi Boukelmoune 
+* elKaZe 
+* Fabio Noris 
+* Georges Winkenbach 
+* Ian Beringer 
+* InsanePrawn 
+* James Cowgill
+* Jakub Wilk 
+* Jason Taylor
+* jvymazal 
+* KaZe 
+* Mantas Mikulėnas 
+* Marek Tamaskovic 
+* michaeladler 
+* Muri Nicanor 
+* Pamplemousse 
+* Phil 
+* Philipp Deppenwiese 
+* Pino Toscano 
+* Radovan Sroka 
+* Rebecca N. Palmer 
+* rsclarke 
+* RyuzakiKK 
+* Stephen Kitt 
+* Steve Grubb 
+* Thiebaud Weksteen 
+* Topi Miettinen 
+* userWayneCampbell 
+* zaolin 
+* Zezadas
 
-**Thanks!**
+**Thank you!**
