@@ -11,12 +11,14 @@ The `usbguard-daemon.conf` file is loaded by the USBGuard daemon after it parses
 
  * `RuleFile=<path>`
    The USBGuard daemon will use this file to load the policy rule set from it and to write new rules received via the IPC interface.
+   Default: `%sysconfdir%/usbguard/rules.conf`
 
  * `ImplicitPolicyTarget=<target>`
    How to treat devices that don't match any rule in the policy.
     * allow - authorize the device
     * block - deauthorize the device
     * reject - logically remove the device node from the system
+   `Default: block`
 
  * `PresentDevicePolicy=<policy>`
    How to treat devices that are already connected when the daemon starts:
@@ -25,6 +27,7 @@ The `usbguard-daemon.conf` file is loaded by the USBGuard daemon after it parses
     * reject - remove every present device
     * keep - just sync the internal state and leave it
     * apply-policy - evaluate the ruleset for every present device
+   Default: `apply-policy`
 
  * `PresentControllerPolicy=<policy>`
    How to treat USB controllers that are already connected when the daemon starts:
@@ -33,9 +36,11 @@ The `usbguard-daemon.conf` file is loaded by the USBGuard daemon after it parses
     * reject - remove every present device
     * keep - just sync the internal state and leave it
     * apply-policy - evaluate the ruleset for every present device
+   Default: `keep`
 
  * `InsertedDevicePolicy=<policy>`
    How to treat USB devices that are already connected after the daemon starts. One of block, reject, apply-policy.
+   Default: `apply-policy`
 
  * `RestoreControllerDeviceState=<boolean>`
    The USBGuard daemon modifies some attributes of controller devices like the default authorization state of new child device instances. Using this setting, you can control whether the daemon will try to restore the attribute values to the state before modification on shutdown.
@@ -46,6 +51,7 @@ The `usbguard-daemon.conf` file is loaded by the USBGuard daemon after it parses
 
  * `IPCAllowedUsers=<username> [<username> ...]`
    A space delimited list of usernames that the daemon will accept IPC connections from.
+   Default: `root`
 
  * `IPCAllowedGroups=<groupname> [<groupname> ...]`
    A space delimited list of groupnames that the daemon will accept IPC connections from.
@@ -55,16 +61,20 @@ The `usbguard-daemon.conf` file is loaded by the USBGuard daemon after it parses
 
  * `DeviceRulesWithPort=<boolean>`
    Generate device specific rules including the "via-port" attribute.
+   Default: `false`
 
  * `AuditBackend=<backend>`
    USBGuard audit events log backend. The backend value should be one of FileAudit or LinuxAudit.
+   Default: `FileAudit`
 
  * `AuditFilePath=<filepath>`
    USBGuard audit events log file path. Required if AuditBackend is set to FileAudit.
+   Default: `%localstatedir%/log/usbguard/usbguard-audit.log`
 
  * `HidePII=<boolean>`
      Hides personally identifiable information such as device serial numbers and
      hashes of descriptors (which include the serial number) from audit entries.
+     Default: false
 
 ## Security Considerations
 
