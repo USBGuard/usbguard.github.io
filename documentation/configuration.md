@@ -62,6 +62,10 @@ The `usbguard-daemon.conf` file is loaded by the USBGuard daemon after it parses
  * `AuditFilePath=<filepath>`
    USBGuard audit events log file path. Required if AuditBackend is set to FileAudit.
 
+ * `HidePII=<boolean>`
+     Hides personally identifiable information such as device serial numbers and
+     hashes of descriptors (which include the serial number) from audit entries.
+
 ## Security Considerations
 
 ### IPC
